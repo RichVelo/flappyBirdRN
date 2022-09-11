@@ -24,6 +24,8 @@ export default function App() {
     }
   }, [birdBottom])
 
+//start first obstacle
+
 
   return (
     <View style={styles.container}>

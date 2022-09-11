@@ -1,5 +1,5 @@
 import React from 'react'
-import { View } from 'react-native';
+import { View, YellowBox } from 'react-native';
 
 const Bird = ({birdBottom, birdLeft}) => {
     const birdWidth = 50
@@ -10,6 +10,7 @@ const Bird = ({birdBottom, birdLeft}) => {
             backgroundColor: 'blue',
             width: birdWidth,
             height: birdheight,
+            borderRadius: 30,
             left: birdLeft - (birdWidth/2),
             bottom: birdBottom - (birdheight/2),
         }}
