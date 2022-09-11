@@ -1,26 +1,26 @@
 import React from 'react'
 import { View, YellowBox } from 'react-native'
 
-const Obstacles = ({obstaclesLeft, obstaclesWidth, obstaclesHeight, gap}) => {
+const Obstacles = ({color, obstaclesLeft, obstaclesWidth, obstaclesHeight, gap, randomBottom}) => {
 
 return(
     <>
         <View style={{
             position: 'absolute',
-            backgroundColor: 'red',
+            backgroundColor: color,
             width: obstaclesWidth,
             height: obstaclesHeight,
             left: obstaclesLeft,
-            bottom: 0 + obstaclesHeight + gap,
+            bottom: randomBottom + obstaclesHeight + gap,
         }}
         />
         <View style={{
             position: 'absolute',
-            backgroundColor: 'red',
+            backgroundColor: color,
             width: obstaclesWidth,
             height: obstaclesHeight,
             left: obstaclesLeft,
-            bottom: 0,
+            bottom: randomBottom,
         }}/>
 
     </>
