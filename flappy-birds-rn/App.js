@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Dimensions, StyleSheet, View, TouchableWithoutFeedback } from 'react-native'
+import { Dimensions, StyleSheet, View, Text, TouchableWithoutFeedback } from 'react-native'
 import Bird from './components/Bird'
 import Obstacles from './components/Obstacles'
 
@@ -13,6 +13,7 @@ export default function App() {
   const [obstaclesLeftTwo, setObstaclesLeftTwo] = useState(screenWidth + screenWidth / 2 + 30)
   const [obstaclesNegHeight, setobstaclesNegHeight] = useState(0)
   const [obstaclesNegHeightTwo, setobstaclesNegHeightTwo] = useState(0)
+  const [score, setScore] = useState(0)
   const obstaclesWidth = 50
   const obstaclesHeight = 350
   const gap = 200
@@ -38,7 +39,7 @@ export default function App() {
 //make bird jump
 const jump = () => {
   if(!isGameOver && (birdBottom < screenHeight)) {
-    setBirdBottom(birdBottom => birdBottom + 50)
+    setBirdBottom(birdBottom => birdBottom + 40)
   }
 }
 
@@ -55,7 +56,8 @@ useEffect(() => {
     }
   } else {
     setObstaclesLeft(screenWidth)
-    setobstaclesNegHeight( - Math.random() * 100)
+    setobstaclesNegHeight( - Math.random() * 250)
+    setScore(score => score + 1)
   }
 }, [obstaclesLeft])
 
@@ -71,7 +73,8 @@ useEffect(() => {
     }
   } else {
     setObstaclesLeftTwo(screenWidth)
-    setobstaclesNegHeightTwo( - Math.random() * 100)
+    setobstaclesNegHeightTwo( - Math.random() * 250)
+    setScore(score => score + 1)
   }
 }, [obstaclesLeftTwo])
 
@@ -104,6 +107,7 @@ const gameOver = () => {
   return (
     <TouchableWithoutFeedback onPress={jump}>
     <View style={styles.container}>
+      {isGameOver && <Text>You scored {score}</Text>}
       <Bird 
         birdBottom={birdBottom}
         birdLeft={birdLeft}

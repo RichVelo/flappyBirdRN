@@ -1,11 +1,12 @@
 import React from 'react'
-import { View, YellowBox } from 'react-native'
+import { View, YellowBox , Image, Text} from 'react-native'
 
 const Bird = ({birdBottom, birdLeft}) => {
     const birdWidth = 50
     const birdheight = 60
     return (
-        <View style={{
+        <View 
+        style={{
             position: 'absolute',
             backgroundColor: 'blue',
             width: birdWidth,
@@ -14,8 +15,9 @@ const Bird = ({birdBottom, birdLeft}) => {
             left: birdLeft - (birdWidth/2),
             bottom: birdBottom - (birdheight/2),
         }}
-            
-        />
+        >
+        
+        </View>
     )
 }
 
