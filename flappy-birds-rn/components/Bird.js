@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, YellowBox } from 'react-native';
+import { View, YellowBox } from 'react-native'
 
 const Bird = ({birdBottom, birdLeft}) => {
     const birdWidth = 50
