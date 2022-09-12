@@ -12,6 +12,7 @@ and because I'm using npm - npm start - this allows me to preview the app by bro
 
 The metro bundler appears to have been deprecated so the terminal QR code was used to allow me to use my phone to preview the app with the Expo Go app in iOS.
 
+the game currently will load and start imediately, produce obstacles (pipes at the top and bottom of the screen with a gap - I am using Math.random * x to change where the gap appearr to make it a challenge). Collisions are detected and the game will end and display a score (determined by the number of obstacles avoided but which also leave the screen entirely [not ideal]). requires a start button to begin the game and a replay button to restart the game.
 ------
 
 The goal is to learn a little React Native as well as general refresh of React / props / components. But I would also like to customize the components to make the game a little my own. Adding in different obstacles - to allow for alternate routes through them rather than just the middle of 2 pipes.
